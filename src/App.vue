@@ -1,6 +1,4 @@
 <script>
-// import axios from 'axios';
-// import { store } from './store'
 import AppHeader from './components/Header/AppHeader.vue';
 import AppMain from './components/Main/AppMain.vue';
 import AppFound from './components/Main/AppFound.vue';
@@ -14,20 +12,6 @@ export default {
     AppFound,
 
   },
-  // data() {
-  //   return {
-  //     store
-  //   }
-  // }
-  // created() {
-
-  //   axios
-  //     .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
-  //     .then((response) => {
-
-  //       this.store.results = response.data.data.slice(0, 20);
-  //       console.log(this.store.results)
-  //     });
 }
 
 </script>
