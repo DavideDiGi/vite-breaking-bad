@@ -1,28 +1,33 @@
 <script>
-// import axios from 'axios';
+import axios from 'axios';
 import AppHeader from './components/Header/AppHeader.vue';
 import AppMain from './components/Main/AppMain.vue';
+import AppFound from './components/Main/AppFound.vue';
+
 
 export default {
   name: 'App',
   components: {
     AppHeader,
     AppMain,
+    AppFound,
+
   },
   data() {
     return {
       gameCards: []
     }
   },
-  // created() {
+  created() {
 
-  //   axios
-  //     .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
-  //     .then((response) => {
+    axios
+      .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+      .then((response) => {
 
-  //       // console,log(response.data.results.slice(0, 20));
-  //     });
-  // }
+        this.gameCards = response.data.data.slice(0, 20);
+        console.log(this.gameCards)
+      });
+  }
 }
 </script>
 
@@ -30,7 +35,10 @@ export default {
 
   <AppHeader />
 
-  <AppMain />
+  <div class="container bg-white pt-5 px-5">
+    <AppFound :gameCardsCount="gameCards.length" />
+  </div>
+  <AppMain :gameCardsList="gameCards" />
 
 </template>
 
@@ -39,5 +47,6 @@ export default {
 
 body {
   background-color: orange;
+
 }
 </style>

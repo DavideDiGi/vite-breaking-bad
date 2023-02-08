@@ -2,7 +2,7 @@
 export default {
     name: 'AppFound',
     props: {
-        cardsCount: {
+        gameCardsCount: {
             type: Number,
             default: 0
         }
@@ -15,7 +15,7 @@ export default {
     <div class="last-container bg-dark">
 
         <div class="cards-founded p-3">
-            <span class="text-white fw-bold">Found 39 cards</span>
+            <span class="text-white fw-bold">Found {{ gameCardsCount }} cards</span>
         </div>
 
     </div>
