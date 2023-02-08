@@ -9,8 +9,6 @@ export default {
 
 <template>
 
-    <!-- <div class="card-container border mb-3" v-for="card in 15"> -->
-
     <div class="single-card "><img :src="card.card_images[0].image_url" :alt="card.name">
     </div>
 
@@ -19,20 +17,12 @@ export default {
         <div class="card-type mt-3">{{ card.archetype }}</div>
     </div>
 
-    <!-- </div> -->
-
 </template>
 
 <style lang="scss" scoped>
-// .card-container {
-//     width: calc((100% / 5) - 20px);
-//     background-color: red;
-
 .single-card {
     height: 300px;
 }
-
-
 
 .card-info {
     min-height: 120px;
@@ -41,10 +31,8 @@ export default {
 
     .card-name {
         width: 100%;
-
     }
 }
-
 
 img {
     width: 100%;
