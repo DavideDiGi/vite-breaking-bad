@@ -1,10 +1,10 @@
 <script>
+import { store } from '../../store';
 export default {
     name: 'AppFound',
-    props: {
-        gameCardsCount: {
-            type: Number,
-            default: 0
+    data() {
+        return {
+            store
         }
     }
 }
@@ -15,7 +15,7 @@ export default {
     <div class="last-container bg-dark">
 
         <div class="cards-founded p-3">
-            <span class="text-white fw-bold">Found {{ gameCardsCount }} cards</span>
+            <span class="text-white fw-bold">Found {{ store.results.length }} cards</span>
         </div>
 
     </div>

@@ -9,7 +9,8 @@ export default {
 
 <template>
 
-    <div class="single-card "><img :src="card.card_images[0].image_url" :alt="card.name">
+    <div class="single-card ">
+        <img :src="card.card_images[0].image_url" :alt="card.name">
     </div>
 
     <div class="card-info text-center p-3">

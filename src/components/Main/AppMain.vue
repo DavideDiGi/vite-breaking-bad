@@ -1,12 +1,12 @@
 <script>
 import AppCards from './AppCards.vue';
+import { store } from '../../store.js';
 
 export default {
     name: 'AppMain',
-    props: {
-        gameCardsList: {
-            type: Array,
-            default: []
+    data() {
+        return {
+            store
         }
     },
     components: {
@@ -20,7 +20,7 @@ export default {
     <div class="container bg-white px-5">
 
         <div class="container-flexed d-flex flex-wrap justify-content-between">
-            <div class="card-container border mb-3" v-for="card in gameCardsList">
+            <div class="card-container border mb-3" v-for="card in store.results">
 
                 <AppCards :card="card" />
 
