@@ -4,5 +4,6 @@ export const store = reactive({
     results: [],
     archetypeResults: [],
     // nameValue: '',
-    archetypeValue: ''
+    archetypeValue: '',
+    archetypeChosen: ''
 });

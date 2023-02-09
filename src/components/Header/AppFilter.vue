@@ -1,10 +1,23 @@
 <script>
+import axios from 'axios';
 import { store } from '../../store.js';
 export default {
     name: 'AppFilter',
     data() {
         return {
-            store
+            store,
+            userChoose: ''
+        }
+    },
+    methods: {
+        updateSelect(element) {
+            axios
+                .get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${element}`)
+                .then((response) => {
+                    this.store.archetypeChosen = response.data.data;
+                    console.log('digi', response.data.data);
+                });
+
         }
     }
 }
@@ -13,10 +26,11 @@ export default {
 <template>
 
     <!-- <form action="" @submit.prevent="$emit('search')"> -->
-    <select @change="updateSelect" v-model="store.archetypeValue" class="form-select my-3"
+    <select @change="updateSelect(userChoose)" v-model="userChoose" class="form-select my-3"
         aria-label="Default select example">
-        <option selected value="">Alien</option>
-        <option value="1">1</option>
+        <option v-for="element in store.archetypeResults" :value="element.archetype_name">
+            {{ element.archetype_name }}
+        </option>
     </select>
     <!-- </form> -->
 
