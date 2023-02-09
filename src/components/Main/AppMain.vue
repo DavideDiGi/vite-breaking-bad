@@ -1,4 +1,5 @@
 <script>
+// import axios from 'axios';
 import AppCards from './AppCards.vue';
 import { store } from '../../store.js';
 
@@ -12,32 +13,31 @@ export default {
     components: {
         AppCards
     },
+    // created() {
+
+    //     axios
+    //         .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+    //         .then((response) => {
+
+    //             this.store.results = response.data.data.slice(0, 20);
+    //             console.log(this.store.results)
+    //         });
+
+    // }
 }
+
 </script>
 
 <template>
 
     <div class="container bg-white px-5">
 
-        <div class="container-flexed d-flex flex-wrap justify-content-between">
-            <div class="card-container border mb-3" v-for="card in store.results">
+        <AppCards />
 
-                <AppCards :card="card" />
-
-            </div>
-        </div>
     </div>
-
 
 </template>
 
 <style lang="scss" >
-.container.bg-white {
-    width: 87%;
-}
 
-.card-container {
-    width: calc((100% / 5) - 20px);
-    background-color: red;
-}
 </style>

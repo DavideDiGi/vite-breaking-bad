@@ -15,7 +15,7 @@ export default {
     <div class="last-container bg-dark">
 
         <div class="cards-founded p-3">
-            <span class="text-white fw-bold">Found {{ store.results.length }} cards</span>
+            <span class="text-white fw-bold">Found {{ this.store.archetypeChosen.length }} cards</span>
         </div>
 
     </div>

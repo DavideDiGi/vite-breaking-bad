@@ -24,21 +24,34 @@ export default {
 </script>
 
 <template>
-
-    <!-- <form action="" @submit.prevent="$emit('search')"> -->
-    <select @change="updateSelect(userChoose)" v-model="userChoose" class="form-select my-3"
-        aria-label="Default select example">
-        <option v-for="element in store.archetypeResults" :value="element.archetype_name">
-            {{ element.archetype_name }}
-        </option>
-    </select>
-    <!-- </form> -->
-
+    <div class="select-box">
+        <div class="info">
+            Seleziona un Archetype per visualizzare le carte!
+        </div>
+        <select @change="updateSelect(userChoose)" v-model="userChoose" class="form-select my-3"
+            aria-label="Default select example">
+            <option v-for="element in store.archetypeResults" :value="element.archetype_name">
+                {{ element.archetype_name }}
+            </option>
+        </select>
+    </div>
 </template>
 
 <style lang="scss" scoped>
-select {
-    width: 200px;
-    margin-left: 35px;
+.select-box {
+    position: relative;
+    padding-top: 10px;
+
+    .info {
+        font-size: 0.6rem;
+        font-weight: bold;
+        position: absolute;
+        margin-left: 15px;
+    }
+
+    select {
+        width: 200px;
+        margin-left: 35px;
+    }
 }
 </style>

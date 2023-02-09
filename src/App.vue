@@ -19,26 +19,6 @@ export default {
       store
     }
   },
-  // created() {
-
-  //   axios
-  //     .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
-  //     .then((response) => {
-
-  //       this.store.results = response.data.data.slice(0, 20);
-  //       console.log('primo axios: ')
-  //       console.log(this.store.results)
-  //     });
-
-  //   axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php').then((response) => {
-
-  //     this.store.archetypeResults = response.data;
-  //     console.log('secondo axios: ')
-  //     console.log(this.store.archetypeResults)
-  //     console.log(this.store.archetypeResults[1].archetype_name)
-  //     // console.log('ecco lo store' + this.store.archetypeResults)
-  //   });
-  // },
 
 }
 </script>
